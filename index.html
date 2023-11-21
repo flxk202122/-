@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적객체</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            const btntext = "빨강|파랑|노랑";
+            $("body").html("<div id='btn'></div>");
+            const btnArr = btntext.split("|");
+
+            let btntag = "";
+
+            for (x in btnArr) {
+                btntag += `<button>${btnArr[x]}</button>`
+            }
+
+            $("#btn").html(btntag)
+
+            $("#btn").on("click", "button", function () {
+                alert($(this).index() + "번 동적버튼입니다.")
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
