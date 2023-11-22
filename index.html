@@ -11,10 +11,14 @@
     <script>
         $(document).ready(function () {
             let gnbtags = "";
-
-            gnbtags += `<ul id="gnb">`
-            gnbtags += `<li>${naviAlldata.gnb[0].nm}</li>`;
-            gnbtags += `<li>${naviAlldata.gnb[1].nm}</li>`;
+            gnbtags += `<ul id="gnb">`;
+            for (x in naviAlldata.gnb) {
+                gnbtags += `<li>
+                    <a href="${naviAlldata.gnb[x].href}">
+                    ${naviAlldata.gnb[x].nm}
+                    </a>
+                    </li>`;
+            }
             gnbtags += `</ul>`
 
             $("body").html(gnbtags)
