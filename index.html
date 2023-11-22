@@ -31,15 +31,22 @@
             }
 
             let btnlist = "";
+            let colorlist = "";
             for (x in naviAlldata.btn) {
-
-                btnlist += `<button>${naviAlldata.btn[x].nm}</button>`
-
+                btnlist += `<button data-bg="${naviAlldata.btn[x].bg}">
+                    ${naviAlldata.btn[x].nm}
+                    </button>`
             }
 
             $("#btn").on('click', 'button', function () {
-                $('body').css('background', naviAlldata.btn[$(this).index()].bg)
+                $('body').css('background', $(this).data('bg'))
             })
+
+
+
+            // $("#btn").on('click', 'button', function () {
+            //     $('body').css('background', naviAlldata.btn[$(this).index()].bg)
+            // })
 
 
             $("#btn").html(btnlist)
