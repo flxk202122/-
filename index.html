@@ -7,23 +7,14 @@
     <title>동적객체</title>
     <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="./data/navi.js"></script>
     <script>
         $(document).ready(function () {
-            const btntext = "빨강|파랑|노랑";
-            $("body").html("<div id='btn'></div>");
-            const btnArr = btntext.split("|");
+            let gnbtags = "";
 
-            let btntag = "";
+            gnbtags += `<ul id='gnb'></ul>`;
 
-            for (x in btnArr) {
-                btntag += `<button>${btnArr[x]}</button>`
-            }
-
-            $("#btn").html(btntag)
-
-            $("#btn").on("click", "button", function () {
-                alert($(this).index() + "번 동적버튼입니다.")
-            });
+            $("body").html(gnbtas)
         })
     </script>
 </head>
