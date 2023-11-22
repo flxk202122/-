@@ -11,7 +11,6 @@
     <script>
         $(document).ready(function () {
             let gnbtags = "";
-            gnbtags += `<ul id="gnb">`;
             for (x in naviAlldata.gnb) {
                 gnbtags += `<li>
                     <a href="${naviAlldata.gnb[x].href}">
@@ -19,15 +18,30 @@
                     </a>
                     </li>`;
             }
-            gnbtags += `</ul>`
 
-            $("body").html(gnbtags)
+            let quicklist = "";
+            for (x in naviAlldata.quick) {
+                quicklist += `<li>
+                    <a href="${naviAlldata.quick[x].href}" target="${naviAlldata.quick[x].target}">
+                    ${naviAlldata.quick[x].nm}
+                    </a>
+                    </li>`;
+            }
+
+
+            $("#gnb").html(gnbtags)
+            $("#quick").html(quicklist)
         })
     </script>
 </head>
 
 <body>
+    <ul id="gnb">
 
+    </ul>
+    <ul id="quick">
+
+    </ul>
 </body>
 
 </html>
