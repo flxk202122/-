@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script src="./data/navi.js"></script>
+    <style>
+    </style>
     <script>
         $(document).ready(function () {
             let gnbtags = "";
@@ -28,7 +30,19 @@
                     </li>`;
             }
 
+            let btnlist = "";
+            for (x in naviAlldata.btn) {
 
+                btnlist += `<button>${naviAlldata.btn[x].nm}</button>`
+
+            }
+
+            $("#btn").on('click', 'button', function () {
+                $('body').css('background', naviAlldata.btn[$(this).index()].bg)
+            })
+
+
+            $("#btn").html(btnlist)
             $("#gnb").html(gnbtags)
             $("#quick").html(quicklist)
         })
@@ -36,12 +50,16 @@
 </head>
 
 <body>
+    <div id="btn">
+        <!-- 버튼3개 클릭하면 배경색상이 바꾸기 -->
+    </div>
     <ul id="gnb">
 
     </ul>
     <ul id="quick">
 
     </ul>
+
 </body>
 
 </html>

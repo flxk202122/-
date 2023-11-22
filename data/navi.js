@@ -27,4 +27,18 @@ const naviAlldata = {
             target: "_blank"
         }
     ],
+    btn: [
+        {
+            nm: "빨간색",
+            bg: "red"
+        },
+        {
+            nm: "파란색",
+            bg: "blue"
+        },
+        {
+            nm: "노란색",
+            bg: "yellow"
+        },
+    ]
 }
